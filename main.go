@@ -6,13 +6,13 @@ import (
 )
 
 type Profile struct {
-	Name string `json:"name"`
+	ApiId string `json:"apiId"`
 }
 
 func main() {
 
 	http.HandleFunc("/json", func(w http.ResponseWriter, r *http.Request) {
-		profile := Profile{"SuperLee"}
+		profile := Profile{"test"}
 
 		js, err := json.Marshal(profile)
 		if err != nil {
