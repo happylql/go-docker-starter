@@ -6,14 +6,13 @@ import (
 )
 
 type Profile struct {
-	Name    string   `json:"name"`
-	Hobbies []string `json:"hobbies"`
+	Name string `json:"name"`
 }
 
 func main() {
 
 	http.HandleFunc("/json", func(w http.ResponseWriter, r *http.Request) {
-		profile := Profile{"SuperLee", []string{"gongl", "programming"}}
+		profile := Profile{"SuperLee"}
 
 		js, err := json.Marshal(profile)
 		if err != nil {
